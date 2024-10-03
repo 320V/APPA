@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Buton Sayfasý</title>
+    <title>APPA | Deneyler</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
-            background: linear-gradient(to bottom, purple, black);
+            background-image: url('bg.jpeg');
+            background-size: cover; 
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,11 +30,17 @@
             padding: 20px;
         }
 
-            .button-container.horizontal {
-                flex-direction: row;
-                overflow-x: auto;
-                overflow-y: hidden;
-            }
+        .button-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h6 {
+            color: white;
+            margin: 0;
+            font-size: 1rem;
+        }
 
         button {
             padding: 20px;
@@ -44,35 +52,14 @@
             width: 200px;
             border-radius: 10px;
         }
-
-        @media screen and (max-aspect-ratio: 1/1) {
-            .button-container {
-                flex-direction: row;
-                overflow-x: auto;
-                overflow-y: hidden;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="button-container" id="buttonContainer">
-        <button>Buton 1</button>
-        <button>Buton 2</button>
-        <button>Buton 3</button>
+    <div class="button-container">
+        <div class="button-wrapper">
+            <h6>Kimya Deney 1 | </h6>
+            <button onclick=""window.location.href='Deney1_Kimya1/index.html'">Deneyi Görüntüle</button>
+        </div>
     </div>
-
-    <script>
-        function adjustLayout() {
-            const container = document.getElementById("buttonContainer");
-            if (window.innerHeight > window.innerWidth) {
-                container.classList.remove("horizontal");
-            } else {
-                container.classList.add("horizontal");
-            }
-        }
-
-        window.addEventListener("resize", adjustLayout);
-        window.addEventListener("load", adjustLayout);
-    </script>
 </body>
 </html>
